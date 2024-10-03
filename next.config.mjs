@@ -1,3 +1,6 @@
+const isProduction = process.env.NODE_ENV === "production";
+const assetPrefix = isProduction ? "/fuksus-documentation" : "";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -10,7 +13,8 @@ const nextConfig = {
     ],
   },
   output: "export",
-  basePath: "/fuksus-documentation",
+  assetPrefix,
+  basePath: assetPrefix,
 };
 
 export default nextConfig;
