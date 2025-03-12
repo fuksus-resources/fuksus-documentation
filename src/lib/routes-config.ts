@@ -55,6 +55,7 @@ export const ROUTES: EachRoute[] = [
         noLink: true,
         items: [
           { title: 'General', href: '/general-config' },
+          { title: 'Framework setup', href: '/framework-setup' },
           { title: 'Translating', href: '/translating' },
         ]
       }
