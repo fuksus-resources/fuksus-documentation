@@ -1,0 +1,73 @@
+---
+title: Framework setup
+description: Setting up framework is as easy as 1, 2, 3!
+icon: mdi:hammer-wrench
+---
+
+## Client side bridge
+Client side bridge can be in `fuksus-crafting/client/bridge/` folder. This folder contains the bridge files for the supported frameworks.
+> As example ESX bridge file is provided
+```lua:esx.lua
+bridge.showNotification = function(type, message)
+    SetNotificationTextEntry('STRING')
+    AddTextComponentString(message)
+    DrawNotification(type, false)
+end
+
+bridge.displayHelpText = function(text)
+    AddTextEntry('helpText', text)
+    DisplayHelpTextThisFrame('helpText', false)
+end
+```
+
+## Server side bridge
+Server side bridge can be in `fuksus-crafting/server/bridge/` folder. This folder contains the bridge files for the supported frameworks.
+> As example ESX bridge file is provided
+```lua:esx.lua
+bridge.getItems = function()
+    return ox_inventory and ox_inventory:Items() or ESX.Items
+end
+
+bridge.getPlayer = function(source)
+    return ESX.GetPlayerFromId(source)
+end
+
+bridge.getIdentifier = function(source)
+    local xPlayer = bridge.getPlayer(source)
+    return xPlayer.identifier
+end
+
+bridge.addInventoryItem = function(source, item, amount)
+    local xPlayer = bridge.getPlayer(source)
+    xPlayer.addInventoryItem(item, amount)
+end
+
+bridge.removeInventoryItem = function(source, item, amount)
+    local xPlayer = bridge.getPlayer(source)
+    xPlayer.removeInventoryItem(item, amount)
+end
+
+bridge.canCarryItem = function(source, item, amount)
+    local xPlayer = bridge.getPlayer(source)
+    return xPlayer.canCarryItem(item, amount)
+end
+
+bridge.getInventoryItem = function(source, item)
+    local xPlayer = bridge.getPlayer(source)
+    local data = xPlayer.getInventoryItem(item)
+    if not data then return nil end
+    return {
+        name = data.name,
+        count = data.count
+    }
+end
+
+bridge.getPlayerJob = function(source)
+    local xPlayer = bridge.getPlayer(source)
+    local job = xPlayer.getJob()
+    return {
+        job = job.name,
+        grade = job.grade
+    }
+end
+```
