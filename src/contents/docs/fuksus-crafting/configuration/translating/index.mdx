@@ -2,3 +2,67 @@
 title: Translating
 description: Quickly translate the resource to any language you want!
 ---
+
+<Note type="note" title="Info">
+  We currently support only English and Lithuanian as default languages.
+  If you want to contribute to the resource translations contact us on Discord.
+</Note>
+
+You can find all the translations at `fuksus-crafting/locales/` folder.
+
+Translation codes starting in `ui_` are used in the User interface.
+
+```lua
+Locales['en'] = {
+    ['open_crafing'] = '~INPUT_CONTEXT~ open crafting menu',
+    ['no_required_job'] = 'You dont have the required job for this crafting bench',
+    ['not_enough_items'] = 'You dont have the required items for this recipe',
+    ['not_enough_space'] = 'You dont have enough space in your inventory',
+    ['need_to_be_near'] = 'You need to be near to the crafting table to craft your recipes',
+    ['not_enough_level'] = 'You dont have the specified level to get this item',
+    ['groups_all'] = 'All items',
+    ['target_label'] = 'Open crafting bench',
+
+    ['ui_modal_header'] = 'Cancel Production?',
+    ['ui_modal_description'] = 'Are you sure you want to cancel the production? Any progress will be lost.',
+    ['ui_modal_quantity'] = 'Quantity',
+    ['ui_modal_timeleft'] = 'Time left',
+    ['ui_modal_chance'] = 'Chance of production',
+    ['ui_modal_xpreward'] = 'Reward of experience',
+    ['ui_modal_progress'] = 'Progress',
+    ['ui_modal_continue'] = 'Continue Production',
+    ['ui_modal_cancel'] = 'Cancel Production',
+
+    ['ui_recipes_header'] = 'Crafting recipes',
+    ['ui_recipes_description'] = '%s availible crafting recipes',
+    ['ui_search_placeholder'] = 'Search...',
+    ['ui_recipe_level'] = '%s Level',
+    ['ui_recipe_add_to_table'] = 'Add to crafting table',
+    ['ui_recipe_lack_items'] = 'Lack the items to craft this',
+    ['ui_recipe_lack_level'] = 'Requires Higher Level',
+
+    ['ui_table_header'] = 'Crafting table',
+    ['ui_table_description'] = '%s items in the crafting queue',
+    ['ui_table_addpl_header'] = 'Add recipe',
+    ['ui_table_addpl_description'] = 'If you want to start making an item, add the recipe to the crafting table.',
+    ['ui_crafting_no_luck'] = 'Luck wasn’t on your side this time',
+    ['ui_crafting_try_again'] = 'Try again',
+    ['ui_crafting_start'] = 'Start crafting',
+    ['ui_crafting_claim'] = 'Claim',
+    ['ui_crafting_cancel'] = 'Cancel',
+
+    ['ui_notif_new'] = 'NEW',
+    ['ui_notif_unlocked'] = 'Recipe unlocked',
+    ['ui_notif_view'] = 'View in crafting table',
+
+    ['ui_switch'] = 'Blueprint',
+    ['ui_main_shared'] = '%s more people are using this crafting table',
+
+    ['ui_near_crafted'] = 'Crafted',
+    ['ui_near_failed'] = 'Production Error',
+
+    ['ui_time_hours'] = 'h',
+    ['ui_time_minutes'] = 'min',
+    ['ui_time_seconds'] = 's'
+}
+```

@@ -57,6 +57,8 @@ export const ROUTES: EachRoute[] = [
           { title: 'General', href: '/general-config' },
           { title: 'Framework setup', href: '/framework-setup' },
           { title: 'Translating', href: '/translating' },
+          { title: 'Recipes', href: '/recipes' },
+          { title: 'Benches', href: '/benches' },
         ]
       }
     ]

@@ -12,20 +12,28 @@ description: This section provides an overview of Quick Start Guide.
 Config = {}
 
 Config.Locale = 'en'
-Config.DrawDistance = 30.0
-Config.MarkerDistance = 5.0
+Config.DrawDistance = 30.0  -- For object
+Config.MarkerDistance = 5.0 -- For marker
 
 Config.ImageLocation = 'nui://ox_inventory/web/images/'
-Config.CraftingTickSpeed = 500
+Config.CraftingTickSpeed = 500 -- How often does the table check the crafting time (in ms). This does not influence crafting time
 
 Config.Exp = {
-    Exponent = 1.3,
-    Basexp = 1250,
-    AddXpForCraft = 100
+    Exponent = 1.3,     -- How much xp next level requires, levels xp is calculated by this formula basexp * (level ^ exponent)
+    Basexp = 1250,      -- How much xp is need for the firts level
+    AddXpForCraft = 100 -- This is default value to add xp after crafting you can change each recipes value in the config
 }
 
-Config.SaveCraftingProgress = true
-Config.SaveTime = 15
+-- This is the categories for benches if no items exist in the category it will not show
+Config.Categories = {
+    ['weapons'] = 'Weapons',
+    ['food'] = 'Food',
+    ['medicine'] = 'Medicine',
+    ['tools'] = 'Tools'
+}
+
+Config.SaveCraftingProgress = true -- Enable crafting progress saving
+Config.SaveTime = 15               -- How often save players xp, level and crafting progress in minutes
 
 Config.Target = 'ox_target'
 

@@ -1,0 +1,56 @@
+---
+title: Benches
+description: Customize your crafting benches to your liking!
+---
+
+<Note type="warning" title="Info">
+  We strongly recommend using our [Configurator](https://configufuksus.netlify.app/crafting#benches) to configure your crafting benches.
+  This tool will help you to configure your crafting benches in a user friendly way.
+</Note>
+
+To start configuring your crafting benches, open the `benches.lua` file in the `fuksus-crafting/server/modules/` folder.
+
+```lua
+Benches = {
+    ['main_bench'] = {
+        coords = vec4(-363.089, -130.012, 38.696, 51.007),
+        model = `gr_prop_gr_bench_04b`,
+        target = {
+            icon = false,
+            title = false
+        },
+        shared = false,
+        near = {
+            enabled = true,
+            maxDistance = 5.0,
+        },
+        blip = {
+            label = 'Mechanic table',
+            id = 566,
+            colour = 31,
+            scale = 0.8
+        },
+        marker = {
+            type = 1,
+            scale = {
+                x = 0.5,
+                y = 0.5,
+                z = 0.5
+            },
+            color = { r = 99, g = 102, b = 241, a = 100 },
+            offset = {
+                x = 0.0,
+                y = 0.0,
+                z = 0.5
+            },
+            face = true,
+            bobUpDown = true,
+            spin = false
+        },
+        job = {
+            mechanic = 1
+        },
+        group = { 'mechanic' }
+    }
+}
+```
